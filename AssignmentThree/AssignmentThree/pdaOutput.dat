@@ -1,0 +1,15 @@
+ab
+ACCEPT
+
+aab
+REJECT
+
+abb
+REJECT
+
+aaabbb
+ACCEPT
+
+aaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbb
+ACCEPT
+
