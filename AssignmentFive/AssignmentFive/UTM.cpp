@@ -154,12 +154,17 @@ void UTM::ReadUTM(ifstream& inputFile){
 
 				FixNewLine(configEvalLine);
 				if (!WindowsSafeEmpty(configEvalLine)){
-					UTMEvaluation eval;
-					eval.input = configEvalLine;
-					eval.state = this->utmMetadata.startState;
-					eval.success = false;
+					if (this->evaluations.size() > 0){
+						this->evaluations[0].input += configEvalLine;
+					}
+					else{
+						UTMEvaluation eval;
+						eval.input = configEvalLine;
+						eval.state = this->utmMetadata.startState;
+						eval.success = false;
 
-					this->evaluations.push_back(eval);
+						this->evaluations.push_back(eval);
+					}
 				}
 			}
 
